@@ -11433,3 +11433,73 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  padding: 100px 30px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+
+.image-stack {
+  display: grid;
+  position: relative; // imperative for the overlapping to work
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.image-stack__item--bottom {
+  grid-column: 4 / -5;
+  grid-row: 1;
+width: 300px
+
+}
+
+/*
+.image-stack__item--top {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  padding-top: 40%; // slightly arbitrary, keeps proportion once resized
+  z-index: 1; // tells the browser to make this image on top
+}
+*/
+.image-stack__item--left {
+  grid-row: 1;
+  grid-column: 1 / span 8;
+  padding-top: 20%; // slightly arbitrary, keeps proportion once resized
+  z-index: 1; // tells the browser to make this image on top
+	position:relative;
+	width: 340px
+}
+.image-stack__item--right {
+  grid-row: 1;
+  grid-column: 7 / -4;
+  padding-top: 80%; // slightly arbitrary, keeps proportion once resized
+z-index: -1;
+	
+  
+  
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
